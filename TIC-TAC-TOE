@@ -1,0 +1,18 @@
+# Query: TIC-TAC-TOE
+# ContextLines: 1
+
+3 results - 2 files
+
+package-lock.json:
+  1  {
+  2:   "name": "TIC-TAC-TOE",
+  3    "version": "0.0.3",
+
+  7      "": {
+  8:       "name": "TIC-TAC-TOE",
+  9        "version": "0.0.3",
+
+package.json:
+  1  {
+  2:   "name": "TIC-TAC-TOE",
+  3    "version": "0.0.3",

@@ -31,8 +31,44 @@ const signOut = function(){
     })
 }
 
+const createGame = function () {
+    console.log('createGame')
+    return $.ajax({
+        method: 'POST',
+        url: 'https://tic-tac-toe-api-development.herokuapp.com/games',
+        headers: {
+            Authorization: 'Bearer ' + store.user.token
+        },
+        data:'{}'
+    })
+}
+
+const getGameStatus=function(){
+    console.log('getGameStatus')
+    return $.ajax({
+        method: 'GET',
+        url: 'https://tic-tac-toe-api-development.herokuapp.com/games',
+        headers: {
+            Authorization: 'Bearer ' + store.user.token
+        }
+    })
+}
+
+const playerMove=function(){
+    return $.ajax({
+        method: 'PATCH',
+        url: 'https://tic-tac-toe-api-development.herokuapp.com/games/'+store.user.ID,
+        headers: {
+            Authorization: 'Bearer ' + store.user.token
+        }
+    })
+}
+
 module.exports = {
     signUp,
     signIn,
-    signOut
+    signOut,
+    getGameStatus,
+    playerMove,
+    createGame
 }

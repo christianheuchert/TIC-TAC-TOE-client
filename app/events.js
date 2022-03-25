@@ -1,12 +1,12 @@
 'use strict'
 
+const store = require('./store.js')
 const getFormFields = require('../lib/get-form-fields.js')
 const authUi = require('./ui.js')
 const authApi = require('./api.js')
 
 const onSignUp = function (event){
     event.preventDefault()
-    console.log('onSignUp')
     const data = getFormFields(event.target)
     console.log(data)
     // call API signup
@@ -17,11 +17,15 @@ const onSignUp = function (event){
 
 const onSignIn = function(event){
     event.preventDefault()
-    console.log('onSignIn')
     const data = getFormFields(event.target)
-   // call API signIn
+    // call API signIn
     authApi.signIn(data)
     .then((response) => authUi.onSignInSuccess(response))
+    
+    // createGame API
+    .then(() => authApi.createGame())
+    .then((response)=> console.log(response.game.cells))
+    .then((response) => {store.games = response.game.cells})
     .catch(() => authUi.onSignInFailure(data))
 }
 
@@ -47,6 +51,7 @@ const boxClicked=function(event){
 }
 
 const restart=function(event){
+    whoClicked=false
     $('.box').css('background', 'lightcoral')
     $('.box').bind('click', boxClicked)
 }

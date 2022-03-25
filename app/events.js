@@ -24,8 +24,8 @@ const onSignIn = function(event){
     
     // createGame API
     .then(() => authApi.createGame())
-    .then((response)=> console.log(response.game.cells))
-    .then((response) => {store.games = response.game.cells})
+    //.then((response)=> console.log(response.game.cells))
+    .then((response) => {store.game = response.game.cells})
     .catch(() => authUi.onSignInFailure(data))
 }
 
@@ -39,15 +39,21 @@ const onSignOut=function(){
 let whoClicked = false
 
 const boxClicked=function(event){
+    //set store to player click index
+    let index = event.target.getAttribute('data-cell-index')
+    
     if (whoClicked){
         $(this).css('background', 'lightblue')
         $(this).unbind('click')
         whoClicked=false
+        store.game[index]="B"
     }else{
         $(this).css('background', 'lightgreen')
         $(this).unbind('click')
         whoClicked=true
+        store.game[index]="G"
     }
+    console.log(store.game)
 }
 
 const restart=function(event){

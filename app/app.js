@@ -6,9 +6,13 @@
 const authEvents = require('./events.js')
 
 $(() => {
-  // your JS code goes here
+  // Sign up, in, ou
   $('#sign-up-form').on('submit', authEvents.onSignUp)
   $('#sign-in-form').on('submit', authEvents.onSignIn)
   $('#sign-out-button').on('click', authEvents.onSignOut)
-  //$('#sign-out-button').on('click', authEvents.onSignOut)
+  // game listeners
+  $('.box').on('click', authEvents.boxClicked)
+  // reset
+  $('#restart').on('click', authEvents.restart)
+  
 })

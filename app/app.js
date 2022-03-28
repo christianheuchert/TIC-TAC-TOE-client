@@ -11,7 +11,6 @@ $(() => {
   $('#sign-in-form').on('submit', authEvents.onSignIn)
   $('#sign-out-button').on('click', authEvents.onSignOut)
   // game listeners
-  $('.box').on('click', authEvents.boxClicked)
   // reset
   $('#restart').on('click', authEvents.restart)
   

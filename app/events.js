@@ -24,9 +24,15 @@ const onSignIn = function(event){
     
     // createGame API
     .then(() => authApi.createGame())
-    //.then((response)=> console.log(response.game.cells))
-    .then((response) => {store.game = response.game.cells})
+    //create a game object in store.js
+    .then((response) => {store.game = response.game})
+    //this is how to access current game ID
+    // console.log(store.game._id)
     .catch(() => authUi.onSignInFailure(data))
+
+    //after sign in make GAME PLAYABLE
+    $('.box').bind('click', boxClicked)
+
 }
 
 const onSignOut=function(){
@@ -36,30 +42,48 @@ const onSignOut=function(){
     .catch(() => authUi.onSignOutFailure())
 }
 // see which player is going
-let whoClicked = false
+let whoClicked = 'x'
 
 const boxClicked=function(event){
     //set store to player click index
     let index = event.target.getAttribute('data-cell-index')
+
+    //update API with playerMove
+    authApi.playerMove(index, whoClicked, false)
     
-    if (whoClicked){
+    //print current gameboard
+    // .then(() => authApi.getGameStatus())
+    //.then((response) => { console.log(response.games[response.games.length-1])})
+    
+    if (whoClicked === 'o'){
         $(this).css('background', 'lightblue')
         $(this).unbind('click')
-        whoClicked=false
-        store.game[index]="B"
+        whoClicked= 'x'
     }else{
         $(this).css('background', 'lightgreen')
         $(this).unbind('click')
-        whoClicked=true
-        store.game[index]="G"
+        whoClicked='o'
     }
-    console.log(store.game)
 }
 
 const restart=function(event){
-    whoClicked=false
+    whoClicked='x'
     $('.box').css('background', 'lightcoral')
     $('.box').bind('click', boxClicked)
+
+    authApi.createGame()
+    //create a new game object in store.js
+    .then((response) => {store.game = response.game})
+}
+
+const isOver=function(){
+    let gameBoard
+    authApi.getGameStatus()
+    .then((response) => { 
+        gameBoard = (response.games[response.games.length-1]).cells
+    })
+    console.log(gameBoard)
+
 }
 
 

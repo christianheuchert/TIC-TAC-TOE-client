@@ -54,12 +54,22 @@ const getGameStatus=function(){
     })
 }
 
-const playerMove=function(){
+const playerMove=function(index, whoClicked, gameStatus){
+    console.log('playerMove')
     return $.ajax({
         method: 'PATCH',
-        url: 'https://tic-tac-toe-api-development.herokuapp.com/games/'+store.user.ID,
+        url: 'https://tic-tac-toe-api-development.herokuapp.com/games/'+store.game._id,
         headers: {
             Authorization: 'Bearer ' + store.user.token
+        },
+    data:{
+        "game":{
+            "cell": {
+                "index": index,
+                "value": whoClicked
+            },
+            "over": gameStatus
+        }
         }
     })
 }

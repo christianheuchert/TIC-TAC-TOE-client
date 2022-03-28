@@ -47,7 +47,7 @@ const getGameStatus=function(){
     console.log('getGameStatus')
     return $.ajax({
         method: 'GET',
-        url: 'https://tic-tac-toe-api-development.herokuapp.com/games',
+        url: 'https://tic-tac-toe-api-development.herokuapp.com/games/' +store.game._id,
         headers: {
             Authorization: 'Bearer ' + store.user.token
         }

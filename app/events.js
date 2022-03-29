@@ -85,60 +85,95 @@ const isOver=function(){
     console.log("isOver")
     console.log(store.gameState)
 
+    //Checks x for win conditions then o
     // top row x
     if(store.gameState[0] === 'x' && store.gameState[1] === 'x' && store.gameState[2] ==='x'){
+        $('#display').html('<p>x wins</p>')
         console.log("x wins")
+        $('.box').unbind('click', boxClicked)
+        $('.box').unbind('click', boxClicked)
     }//middle row x
     else if(store.gameState[3] === 'x' && store.gameState[4] === 'x' && store.gameState[5] ==='x') {
+        $('#display').html('<p>x wins</p>')
         console.log("x wins")
+        $('.box').unbind('click', boxClicked)
     }//bottom row 3 x
     else if(store.gameState[6] === 'x' && store.gameState[7] === 'x' && store.gameState[8] ==='x') {
+        $('#display').html('<p>x wins</p>')
         console.log("x wins")
+        $('.box').unbind('click', boxClicked)
     } // left column x
     else if(store.gameState[0] === 'x' && store.gameState[3] === 'x' && store.gameState[6] ==='x') {
+        $('#display').html('<p>x wins</p>')
         console.log("x wins")
+        $('.box').unbind('click', boxClicked)
     } // middle column x
     else if(store.gameState[1] === 'x' && store.gameState[4] === 'x' && store.gameState[7] ==='x') {
+        $('#display').html('<p>x wins</p>')
         console.log("x wins")
+        $('.box').unbind('click', boxClicked)
     }// right column x
     else if(store.gameState[2] === 'x' && store.gameState[5] === 'x' && store.gameState[8] ==='x') {
+        $('#display').html('<p>x wins</p>')
         console.log("x wins")
+        $('.box').unbind('click', boxClicked)
     }// top left diagnal x
     else if(store.gameState[0] === 'x' && store.gameState[4] === 'x' && store.gameState[8] ==='x') {
+        $('#display').html('<p>x wins</p>')
         console.log("x wins")
+        $('.box').unbind('click', boxClicked)
     }// top right diagnal x
     else if(store.gameState[2] === 'x' && store.gameState[4] === 'x' && store.gameState[6] ==='x') {
+        $('#display').html('<p>x wins</p>')
         console.log("x wins")
+        $('.box').unbind('click', boxClicked)
     } 
 
     // CHANGE to top row o
     else if(store.gameState[0] === 'o' && store.gameState[1] === 'o' && store.gameState[2] ==='o'){
+        $('#display').html('<p>o wins</p>')
         console.log("o wins")
+        $('.box').unbind('click', boxClicked)
     }//middle row o
     else if(store.gameState[3] === 'o' && store.gameState[4] === 'o' && store.gameState[5] ==='o') {
+        $('#display').html('<p>o wins</p>')
         console.log("o wins")
+        $('.box').unbind('click', boxClicked)
     }//bottom row 3 o
     else if(store.gameState[6] === 'o' && store.gameState[7] === 'o' && store.gameState[8] ==='o') {
+        $('#display').html('<p>o wins</p>')
         console.log("o wins")
+        $('.box').unbind('click', boxClicked)
     } // left column o
     else if(store.gameState[0] === 'o' && store.gameState[3] === 'o' && store.gameState[6] ==='o') {
+        $('#display').html('<p>o wins</p>')
         console.log("o wins")
+        $('.box').unbind('click', boxClicked)
     } // middle column o
     else if(store.gameState[1] === 'o' && store.gameState[4] === 'o' && store.gameState[7] ==='o') {
+        $('#display').html('<p>o wins</p>')
         console.log("o wins")
+        $('.box').unbind('click', boxClicked)
     }// right column o
     else if(store.gameState[2] === 'o' && store.gameState[5] === 'o' && store.gameState[8] ==='o') {
+        $('#display').html('<p>o wins</p>')
         console.log("o wins")
+        $('.box').unbind('click', boxClicked)
     }// top left diagnal o
     else if(store.gameState[0] === 'o' && store.gameState[4] === 'o' && store.gameState[8] ==='o') {
+        $('#display').html('<p>o wins</p>')
         console.log("o wins")
+        $('.box').unbind('click', boxClicked)
     }// top right diagnal o
     else if(store.gameState[2] === 'o' && store.gameState[4] === 'o' && store.gameState[6] ==='o') {
+        $('#display').html('<p>o wins</p>')
         console.log("o wins")
+        $('.box').unbind('click', boxClicked)
     }
 
     //DRAW
     else if (store.gameState[0] && store.gameState[1] && store.gameState[2] && store.gameState[3] && store.gameState[4] && store.gameState[5] && store.gameState[6] && store.gameState[7] && store.gameState[8]) {
+        $('#display').html('<p>Its a tie</p>')
         console.log("Its a tie")
     }
     

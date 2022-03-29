@@ -1,7 +1,7 @@
 @import '~bootstrap/scss/bootstrap';
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Smokum&display=swap');
 
-$font-family: 'Playfair Display', serif;
+$font-family: 'Smokum', cursive;
 $Body-bg-color: lightgrey;
 $Box-bg-color: lightgrey;
 $box-border-color: black;
@@ -22,6 +22,19 @@ body {
   font-family: $font-family;
   height: 100px;
   justify-content: center;
+}
+
+button {
+}
+
+#display{
+  text-align: center;
+  font-family: $font-family;
+  font-size:x-large;
+}
+
+.container{
+        max-width: 300px;
 }
 
 h1, h2 {

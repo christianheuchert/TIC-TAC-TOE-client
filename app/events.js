@@ -45,6 +45,7 @@ const onSignOut=function(){
     authApi.signOut()
     .then(() => authUi.onSignOutSuccess())
     .catch(() => authUi.onSignOutFailure())
+    $('.box').unbind('click', boxClicked)
 }
 
 // see which player is going global variable

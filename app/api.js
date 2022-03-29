@@ -8,7 +8,7 @@ const signUp = function(data){
     console.log('signUp')
     return $.ajax({
         method: 'POST',
-        url: 'https://tic-tac-toe-api-development.herokuapp.com/sign-up',
+        url: config.apiUrl + '/sign-up',
         data
     })
 }
@@ -17,7 +17,7 @@ const signIn = function(data){
     console.log('signIn')
     return $.ajax({
         method: 'POST',
-        url: 'https://tic-tac-toe-api-development.herokuapp.com/sign-in',
+        url: config.apiUrl + '/sign-in',
         data
     })
 }
@@ -26,7 +26,7 @@ const signOut = function(){
     console.log('signOut')
     return $.ajax({
         method: 'DELETE',
-        url: 'https://tic-tac-toe-api-development.herokuapp.com/sign-out',
+        url: config.apiUrl + '/sign-out',
         headers: {
             Authorization: 'Bearer ' + store.user.token
         }
@@ -37,7 +37,7 @@ const createGame = function () {
     console.log('createGame')
     return $.ajax({
         method: 'POST',
-        url: 'https://tic-tac-toe-api-development.herokuapp.com/games',
+        url: config.apiUrl + '/games',
         headers: {
             Authorization: 'Bearer ' + store.user.token
         },
@@ -49,7 +49,7 @@ const getGameStatus=function(){
     console.log('getGameStatus')
     return $.ajax({
         method: 'GET',
-        url: 'https://tic-tac-toe-api-development.herokuapp.com/games/' +store.game._id,
+        url: config.apiUrl + '/games/' +store.game._id,
         headers: {
             Authorization: 'Bearer ' + store.user.token
         }
@@ -60,7 +60,7 @@ const playerMove=function(index, whoClicked, gameStatus){
     console.log('playerMove')
     return $.ajax({
         method: 'PATCH',
-        url: 'https://tic-tac-toe-api-development.herokuapp.com/games/'+store.game._id,
+        url: config.apiUrl + '/games/'+store.game._id,
         headers: {
             Authorization: 'Bearer ' + store.user.token
         },

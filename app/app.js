@@ -13,5 +13,6 @@ $(() => {
   // game listeners
   // reset
   $('#restart').on('click', authEvents.restart)
+  $('#assign-color').on('click', authEvents.colorSelect)
   
 })

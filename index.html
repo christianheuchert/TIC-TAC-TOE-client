@@ -38,7 +38,7 @@
 <section id="display"></section>
 
 <div class="container">
-  <h2>Sign in To Play</h2>
+  <h2 id="rule">Sign in To Play</h2>
   <div class="row">
     <div data-cell-index='0' id="1" class="col-4 box alt-color"></div>
     <div data-cell-index='1' id="2" class="col-4 box alt-color"></div>
@@ -53,9 +53,24 @@
     <div data-cell-index='8' id="9" class="col-4 box alt-color"></div>
   </div>
 </div>
-
+<!-- restart button -->
 <button id="restart">Restart</button>
 
+<!-- color selection field -->
+<h6 style="text-align:center">pick your color</h6>
+<div class = "container">
+  <div class="row">
+    <div id="player1" class="col-6 box alt-color">Player 1</div>
+    <div id="player2" class="col-6 box alt-color">Player 2</div>
+  </div>
+</div>
+<!-- player1 and player 2 form for color selection -->
+<form id="color">
+  <input type="text" id="player1Color" value="">
+  <input type="text" id="player2Color" value="">
+  <button id="assign-color">Assign</button>
+
+</form>
 
 
 </body>

@@ -15,6 +15,10 @@ const onSignInSuccess = function (response) {
     // store user token
     store.user = response.user
     $('form').trigger('reset')
+
+    // hide command to sign in
+    hideRule()
+    hideSignUpIn()
 }
 const onSignInFailure = function(){
     $('#display').html('<p>User sign in failure</p>') 
@@ -45,6 +49,16 @@ const hideRule = function (){
     $('#rule').hide()
 }
 
+const hideSignUpIn = function (){
+    $('#sign-up-form').hide()
+    $('#sign-in-form').hide()
+}
+
+const showSignUpIn = function (){
+    $('#sign-up-form').show()
+    $('#sign-in-form').show()
+}
+
 module.exports = {
     onSignUpSuccess,
     onSignUpFailure,
@@ -56,5 +70,7 @@ module.exports = {
     player2Win,
     playerTie,
     hideRule,
+    hideSignUpIn,
+    showSignUpIn,
     onRestart
 }

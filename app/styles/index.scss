@@ -2,7 +2,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Smokum&display=swap');
 
 $font-family: 'Smokum', cursive;
-$Body-bg-color: lightgrey;
+$Body-bg-color: #FFF1FA;
 $Box-bg-color: lightgrey;
 $box-border-color: black;
 $alt-bg-color: lightcoral;
@@ -11,6 +11,10 @@ body {
   background-color: $Body-bg-color;
   margin:10px;
   padding:10px;
+}
+
+#restart {
+  margin:20px;
 }
 
 .box {

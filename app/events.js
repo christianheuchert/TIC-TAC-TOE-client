@@ -28,10 +28,10 @@ const onSignIn = function(event){
     .then((response) => {store.game = response.game})
     .catch(() => authUi.onSignInFailure(data))
 
-    //after sign in make GAME PLAYABLE
+    //after successful sign in make GAME PLAYABLE
     $('.box').bind('click', boxClicked)
-    // hide command to sign in
-    authUi.hideRule()
+    // restart
+    $('#restart').bind('click', restart)
 
     //preset colors for players
     store.player1Color = '#1ABC9C'
@@ -45,7 +45,10 @@ const onSignOut=function(){
     authApi.signOut()
     .then(() => authUi.onSignOutSuccess())
     .catch(() => authUi.onSignOutFailure())
+    // stop events of board and restart
     $('.box').unbind('click', boxClicked)
+    $('#restart').unbind('click', restart)
+    authUi.showSignUpIn()
 }
 
 // see which player is going global variable
@@ -75,18 +78,21 @@ const boxClicked=function(event){
 }
 
 const restart=function(event){
+    authApi.createGame()
+    //create a new game object in store.js
+    .then((response) => {store.game = response.game})
+    
     whoClicked='x'
     $('.box').css('background', 'lightcoral')
+    //turn back on tictactoe board event listener
     $('.box').bind('click', boxClicked)
     //reset color of player1/2
     $('#player1').css('background', ''+ store.player1Color + '')
     $('#player2').css('background', ''+ store.player2Color + '')
     authUi.onRestart()
-
-    authApi.createGame()
-    //create a new game object in store.js
-    .then((response) => {store.game = response.game})
 }
+
+
 
 const isOver=function(){
     console.log("isOver")
@@ -171,10 +177,14 @@ const colorSelect=function(event){
     event.preventDefault()
     const player1Color = document.getElementById("player1Color").value;
     const player2Color = document.getElementById("player2Color").value;
-    store.player1Color = player1Color
-    store.player2Color = player2Color
-    $('#player1').css('background', ''+ store.player1Color + '')
-    $('#player2').css('background', ''+ store.player2Color + '')
+    if (player1Color!==""){
+        store.player1Color = player1Color
+        $('#player1').css('background', ''+ store.player1Color + '')
+    }
+    if (player2Color!==""){
+        store.player2Color = player2Color
+        $('#player2').css('background', ''+ store.player2Color + '')
+    }
     console.log(store.player1Color)
     console.log(store.player2Color)
 }

@@ -4,12 +4,11 @@ Tic-Tac-Toe Single Page App. Functionalities include the following: sign-up, sig
 
 
 ### User Stories:
-
-⋅⋅* As a player I want to be able to log in and out
-⋅⋅* As a player I want to be able to place a piece on the board
-⋅⋅* As a second player I want to be able to place a piece on the board
-⋅⋅* As a player I want to know if I won
-⋅⋅* As a player I want to be able to play again and again
+* As a player I want to be able to log in and out
+* As a player I want to be able to place a piece on the board
+* As a second player I want to be able to place a piece on the board
+* As a player I want to know if I won
+* As a player I want to be able to play again and again
 
 ### wireframe
 ![wireframe](https://i.imgur.com/t3evIuW.png)

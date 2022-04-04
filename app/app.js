@@ -9,7 +9,7 @@ $(() => {
   // Sign up, in, ou
   $('#sign-up-form').on('submit', authEvents.onSignUp)
   $('#sign-in-form').on('submit', authEvents.onSignIn)
-  $('#sign-out-button').on('click', authEvents.onSignOut)
+  $('#sign-out-button').on('click', authEvents.onSignOut).hide()
   // game listeners
   $('#assign-color').on('click', authEvents.colorSelect)
   

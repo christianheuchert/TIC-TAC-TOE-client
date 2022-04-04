@@ -19,6 +19,7 @@ const onSignInSuccess = function (response) {
     // hide command to sign in
     hideRule()
     hideSignUpIn()
+    showSignOut()
 }
 const onSignInFailure = function(){
     $('#display').html('<p>User sign in failure</p>') 
@@ -26,6 +27,7 @@ const onSignInFailure = function(){
 
 const onSignOutSuccess = function () {
     $('#display').html('<p>User signed Out</p>')
+    $('#sign-out-button').hide()
 }
 const onSignOutFailure = function(){
     $('#display').html('<p>User sign out failure</p>')
@@ -57,6 +59,10 @@ const hideSignUpIn = function (){
 const showSignUpIn = function (){
     $('#sign-up-form').show()
     $('#sign-in-form').show()
+}
+
+const showSignOut = function (){
+    $('#sign-out-button').show()
 }
 
 module.exports = {

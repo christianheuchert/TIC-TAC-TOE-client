@@ -18,19 +18,19 @@
 
 
 <form id="sign-up-form">
-  <input name="credentials[email]" type="email" placeholder="Email">
-  <input name="credentials[password]" type="password" placeholder="Enter password">
-  <input name="credentials[password_confirmation]" type="password" placeholder="Confirm password">
-  <button type="submit">Sign Up</button>
-  <h6>Sign Up</h6>
+  <input class=input name="credentials[email]" type="email" placeholder="Email">
+  <input class=input name="credentials[password]" type="password" placeholder="Enter password">
+  <input class=input name="credentials[password_confirmation]" type="password" placeholder="Confirm password">
+  <button class=input type="submit">Sign Up</button>
+  <!-- <h6 class=input >Sign Up</h6> -->
 </form>
 
 
 <form id="sign-in-form">
-  <input name="credentials[email]" type="email" placeholder="Email">
-  <input name="credentials[password]" type="password" placeholder="Enter password">
-  <button type="submit">Sign In</button>
-  <h6>Sign In</h6>
+  <input class=input name="credentials[email]" type="email" placeholder="Email">
+  <input class=input name="credentials[password]" type="password" placeholder="Enter password">
+  <button class=input type="submit">Sign In</button>
+  <!-- <h6>Sign In</h6> -->
 </form>
 
 
@@ -40,7 +40,7 @@
 <section id="display"></section>
 
 <div class="container">
-  <h2 id="rule">Sign in To Play</h2>
+  <h3 id="rule">Sign in To Play</h2>
   <div class="row">
     <div data-cell-index='0' id="1" class="col-4 box alt-color"></div>
     <div data-cell-index='1' id="2" class="col-4 box alt-color"></div>
@@ -56,30 +56,31 @@
   </div>
 </div>
 <!-- restart button -->
-<button id="restart">Restart</button>
+<button class=input id="restart">Restart</button>
 
 <!-- color selection field -->
 <h6 style="text-align:center">pick your color (hex and common color names) </h6>
 <div class = "container">
   <div class="row">
-    <div id="player1" class="col-6 box alt-color">Player 1</div>
-    <div id="player2" class="col-6 box alt-color">Player 2</div>
+    <div id="player1" class="col-6 box">Player 1</div>
+    <div id="player2" class="col-6 box">Player 2</div>
   </div>
 </div>
 <!-- player1 and player 2 form for color selection -->
 <form id="color">
-  <input type="text" id="player1Color" placeholder='color1' value="">
-  <input type="text" id="player2Color" placeholder='color2' value="">
-  <button id="assign-color">Assign</button>
+  <input class=color-picker type="text" id="player1Color" placeholder='color1' value="">
+  <input class=color-picker type="text" id="player2Color" placeholder='color2' value="">
 </form>
+<button id="assign-color">Assign</button>
 <!-- <div style="text-align:right"><a href="https://htmlcolorcodes.com/">find color</a></div> -->
+
+
 
 <!-- modal for color selector -->
 <!-- Button trigger modal -->
 <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
   find colors
 </button>
-
 <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
@@ -89,7 +90,8 @@
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <iframe src="https://html-color.codes/" style="height:200px;width:450px;" title="Color Select"></iframe>
+        <!-- iframe to display page inside -->
+        <iframe src="https://html-color.codes/" style="height:450px;width:450px;" title="Color Select"></iframe>
       </div>
       <div class="modal-footer">
       </div>

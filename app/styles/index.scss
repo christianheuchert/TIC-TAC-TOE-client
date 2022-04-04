@@ -1,0 +1,88 @@
+@import '~bootstrap/scss/bootstrap';
+@import url('https://fonts.googleapis.com/css2?family=Smokum&display=swap');
+
+$font-family: 'Smokum', cursive;
+$Body-bg-color: #FFF1FA;
+$Box-bg-color: lightgrey;
+$box-border-color: black;
+$alt-bg-color: lightcoral;
+
+body {
+  background-color: $Body-bg-color;
+  margin:10px;
+  padding:10px;
+}
+
+.box {
+  align-items: center;
+  background-color: $Box-bg-color;
+  border: 1px solid $box-border-color;
+  color: black;
+  display: flex;
+  font-family: $font-family;
+  height: 100px;
+  justify-content: center;
+}
+
+
+#display{
+  text-align: center;
+  font-family: $font-family;
+  font-size:x-large;
+}
+
+.container{
+  max-width: 300px;
+}
+
+h1, h2 {
+  font-family: $font-family;
+  text-align: center;
+  font-size: 60px;
+}
+h3 {
+  font-family: $font-family;
+  text-align: center;
+}
+
+h6 {
+  font-family: $font-family;
+}
+
+.alt-color {
+  background-color: $alt-bg-color;
+}
+
+#player1, #player2{
+  height: 50px;
+}
+
+#color{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.input {
+  display: block;
+  text-align: center;
+  width: 150px;
+  margin: 8px auto;
+}
+
+.color-picker{
+  width: 150px;
+  text-align: center;
+  width: 150px;
+}
+
+button {
+  background-color: lightcoral;
+}
+
+#assign-color{
+  display: block;
+  text-align: center;
+  width: 150px;
+  margin: 8px auto;
+}
